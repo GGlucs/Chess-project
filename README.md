@@ -1,22 +1,22 @@
 # Chess-project
 
-about project:
+About project:
 
-this is a chess game made from scratch, for the purpose of
+This is a chess game made from scratch, for the purpose of
 learn more about oriented object programing, project structure,
-artificial intelligence and voice commands.
+artificial intelligence, voice commands and train blindfold chess.
 
-last version: 3.0
+Last version: 3.0
 
 Prerquisites: python 3.7 or high, sympy library
 
-tutorial:
+Tutorial:
 
-1 download the files in a folder
+1 Download the files in a folder
 
-2 open the file main.py
+2 Open the file main.py
 
-3 type the first square and the second square like this 'e2e4'
+3 Type the first square and the second square like this 'e2e4'
 
-4 to make castle only type the king's square and the second like this 'e1g1'
+4 To make castle only type the king's square and the second like this 'e1g1'
 
