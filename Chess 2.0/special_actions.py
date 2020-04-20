@@ -106,10 +106,8 @@ class detector():
 				for i in range(8):
 					for j in range(8):
 						if save1[i][j]!=board1[i][j]:
-							rookmoviment.append(board1[i][j].__repr__()+str(i)+str(j))
-				print(rookmoviment)			
+							rookmoviment.append(board1[i][j].__repr__()+str(i)+str(j))		
 				if len(rookmoviment)==2:
-					print('ok')
 					for x in rookmoviment:
 						if '  ' in x:
 							print('ok denovo')

@@ -3,7 +3,7 @@ from Board import Board
 from special_actions import detector
 from pygame_functions import *
 import os
-
+'''
 screen = screenSize(504,600)
 pygame.display.set_caption('Chess 2.0')	
 
@@ -40,7 +40,9 @@ wpawn = pygame.transform.scale(wpawn,(60,50))
 
 
 pies = {'Pw':wpawn,'Qw':wqueen,'Nw':wknight,'Rw':wrook,'Kw':wking,'Bw':wbishop,'Pd':dpawn,'Qd':dqueen,'Nd':dknight,'Rd':drook,'Kd':dking,'Bd':dbishop}
+'''
 clear = lambda: os.system('cls')
+
 color = {0:'w',1:'d'}
 enemy = {0:'d',1:'w'}
 
@@ -78,25 +80,28 @@ class Main():
 			save2 = [[Board.b2[i][j] for j in range(8)]for i in range(8)]
 			save_passant = [detector.passant[x] for x in range(2)]
 
-			screen.blit(board,(0,0))
-			for i in range(8):
-				for j in range(8):
-					if Board.b1[i][j] != '  ':
-						nam = Board.b1[i][j].__repr__()
-						if nam == 'Pw' or nam == 'Pd':
-							ac = 14
-						else:
-							ac = 5
-						screen.blit(pies[nam],(63*j,441-(63*i)+ac))	
+			#screen.blit(board,(0,0))
+			#for i in range(8):
+			#	for j in range(8):
+			#		if Board.b1[i][j] != '  ':
+			#			nam = Board.b1[i][j].__repr__()
+			#			if nam == 'Pw' or nam == 'Pd':
+			#				ac = 14
+			#			else:
+			#				ac = 5
+			#			screen.blit(pies[nam],(63*j,441-(63*i)+ac))	
 
 
-			wordBox = makeTextBox(5,550,300,0,'HERE',0,24)
-			showTextBox(wordBox)
-			jogada = textBoxInput(wordBox)
+			#wordBox = makeTextBox(5,550,300,0,'HERE',0,24)
+			#showTextBox(wordBox)
+			#jogada = textBoxInput(wordBox)
+			for x in range(7,-1,-1):
+				print(Board.b1[x])
+			jogada = input('digite uma jogada:\n')	
 			if jogada == 'stop':
 				break	
 			jogada = Player().translate(jogada)
-
+			print(jogada)
 			try:
 				Player().play3(jogada,color[c%2],detector.passant,detector.square,detector.castles)
 			except:
@@ -127,6 +132,6 @@ class Main():
 
 			Main.list_plays.append(jogada[0]+color[c%2]+jogada[-2]+jogada[-1])
 			c+=1
-		endWait()		
+		#endWait()		
 Main()
 
